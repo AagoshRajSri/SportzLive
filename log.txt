@@ -1,0 +1,37 @@
+
+> sportz@1.0.0 db:migrate
+> drizzle-kit migrate
+
+No config path provided, using default 'drizzle.config.js'
+Reading config file 'C:\Aagosh\CODE\websockets\sportz\drizzle.config.js'
+Using 'pg' driver for database querying
+(node:6280) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+DrizzleQueryError: Failed query: CREATE SCHEMA IF NOT EXISTS "drizzle"
+params: 
+    at NodePgPreparedQuery.queryWithCache (C:\Aagosh\CODE\websockets\sportz\node_modules\src\pg-core\session.ts:73:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PgDialect.migrate (C:\Aagosh\CODE\websockets\sportz\node_modules\src\pg-core\dialect.ts:85:3)
+    at async migrate (C:\Aagosh\CODE\websockets\sportz\node_modules\src\node-postgres\migrator.ts:10:2) {
+  query: 'CREATE SCHEMA IF NOT EXISTS "drizzle"',
+  params: [],
+  cause: Error: read ECONNRESET
+      at C:\Aagosh\CODE\websockets\sportz\node_modules\pg-pool\index.js:45:11
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async <anonymous> (C:\Aagosh\CODE\websockets\sportz\node_modules\src\node-postgres\session.ts:149:14)
+      at async NodePgPreparedQuery.queryWithCache (C:\Aagosh\CODE\websockets\sportz\node_modules\src\pg-core\session.ts:71:12)
+      at async PgDialect.migrate (C:\Aagosh\CODE\websockets\sportz\node_modules\src\pg-core\dialect.ts:85:3)
+      at async migrate (C:\Aagosh\CODE\websockets\sportz\node_modules\src\node-postgres\migrator.ts:10:2) {
+    errno: -4077,
+    code: 'ECONNRESET',
+    syscall: 'read'
+  }
+}
+[Γú╖] applying migrations...[2K[1G[Γú»] applying migrations...[2K[1G[Γúƒ] applying migrations...[2K[1G[Γí┐] applying migrations...[2K[1G[Γó┐] applying migrations...[2K[1G[Γú╗] applying migrations...[2K[1G[Γú╜] applying migrations...[2K[1G[Γú╖] applying migrations...
